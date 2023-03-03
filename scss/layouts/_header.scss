@@ -1,0 +1,183 @@
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  background: $clr-dark-primary;
+  &__wrapper {
+    @include grid(2, 1rem);
+    @include mediaQuery($break-sm) {
+      display: flex;
+      width: 100%;
+    }
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  img {
+    @include imgFit(2.5rem, 2.5rem);
+  }
+  h2 {
+    font-size: 2rem;
+    color: $clr-light-primary;
+    @include mediaQuery($break-sm) {
+      width: 18rem;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: -100rem;
+    left: 0;
+    width: 100%;
+    height: 42vh;
+    padding-top: 6rem;
+    transition: 0.5s ease;
+    z-index: -1;
+    background: $clr-dark-primary;
+    overflow-y: auto;
+    @include mediaQuery($break-sm) {
+      overflow-y: unset;
+    }
+    ul {
+      li {
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        a {
+          font-size: 1.7rem;
+          color: $clr-light-primary;
+        }
+        &:hover a {
+          color: $clr-light-primary;
+        }
+        @include mediaQuery($break-sm) {
+          padding: unset;
+          & a {
+            opacity: 0.5;
+          }
+          &:hover a {
+            opacity: 1;
+          }
+        }
+      }
+      @include mediaQuery($break-sm) {
+        align-items: end;
+        gap: 2rem;
+      }
+    }
+    .header__right {
+      color: $clr-light-primary;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      i.fa-magnifying-glass {
+        display: none;
+        @include mediaQuery($break-sm) {
+          display: block;
+          position: absolute;
+          z-index: 1;
+          right: 36rem;
+          margin-top: 5px;
+        }
+      }
+      i.fa-arrow-down {
+        position: absolute;
+        left: 1.8rem;
+        top: 5.1rem;
+        z-index: 1;
+        @include mediaQuery($break-sm) {
+          left: unset;
+          right: 11rem;
+          top: 5px;
+        }
+      }
+      a {
+        color: $clr-light-primary;
+        font-size: 1.8rem;
+        background: $clr-primary;
+        height: 100%;
+        &:last-child {
+          padding: 1rem 1.5rem;
+          padding-left: 4rem;
+          @include mediaQuery($break-sm) {
+            padding: 1.5rem 3rem;
+          }
+        }
+        @include mediaQuery($break-sm) {
+          & {
+            position: absolute;
+            padding: 1.45rem;
+            top: -1.5rem;
+            right: 0;
+            background: $clr-primary;
+            border: 1px solid transparent;
+            color: $clr-light-primary;
+            height: unset;
+            transition: 0.5s ease;
+          }
+          &:hover {
+            background: darken($clr-primary, 4);
+            color: $clr-light-primary;
+          }
+        }
+      }
+      &:hover a:last-child {
+        background: lighten($clr-primary, 8);
+      }
+      input {
+        padding: 1rem 1.5rem;
+        font-size: 1.6rem;
+        background: $clr-dark-primary;
+        color: $clr-light-primary;
+        border: none;
+        outline: none;
+        @include mediaQuery($break-sm) {
+          display: block;
+          position: absolute;
+          padding: 2rem;
+          padding-left: 3rem;
+          top: -1.5rem;
+          right: 13.9rem;
+          background: #3d3d42;
+          &:hover {
+            background: lighten(#3d3d42, 8);
+          }
+        }
+      }
+    }
+    &.active {
+      top: 0;
+    }
+    @include mediaQuery($break-sm) {
+      & {
+        z-index: unset;
+        position: unset;
+        height: unset;
+        padding-top: unset;
+        padding-left: unset;
+        background: unset;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        ul {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__bars {
+    i {
+      padding: 0.5rem;
+      color: $clr-light-primary;
+      font-size: 3rem;
+      float: right;
+    }
+    @include mediaQuery($break-sm) {
+      & {
+        display: none;
+      }
+    }
+  }
+}
