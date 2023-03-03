@@ -31,11 +31,11 @@
     left: 0;
     width: 100%;
     height: 42vh;
-    padding-top: 6rem;
+    padding-top: 7rem;
     transition: 0.5s ease;
     background: $clr-dark-primary;
     overflow-y: auto;
-    z-index: -1;
+    z-index: -2;
     @include mediaQuery($break-sm) {
       overflow-y: unset;
     }
@@ -181,5 +181,13 @@
         display: none;
       }
     }
+  }
+  &::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $clr-dark-secondary;
   }
 }
