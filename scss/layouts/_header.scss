@@ -1,8 +1,8 @@
 .header {
   width: 100%;
   position: fixed;
+  background: $clr-dark-secondary;
   z-index: 99;
-  background: $clr-dark-primary;
   &__wrapper {
     @include grid(2, 1rem);
     @include mediaQuery($break-sm) {
@@ -71,6 +71,9 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      i {
+        cursor: pointer;
+      }
       i.fa-magnifying-glass {
         display: none;
         @include mediaQuery($break-sm) {

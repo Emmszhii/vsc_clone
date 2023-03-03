@@ -375,8 +375,8 @@ body {
 .header {
   width: 100%;
   position: fixed;
+  background: #2c2c32;
   z-index: 99;
-  background: #25252b;
 }
 .header__wrapper {
   display: grid;
@@ -461,6 +461,9 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+}
+.header__nav .header__right i {
+  cursor: pointer;
 }
 .header__nav .header__right i.fa-magnifying-glass {
   display: none;
@@ -573,4 +576,136 @@ body {
   .header__bars {
     display: none;
   }
+}
+
+.btn {
+  padding: 1.5rem 2rem;
+  display: inline-block;
+}
+
+.btn--primary {
+  background: #0066b8;
+}
+
+.version {
+  background: #25252b;
+  padding-top: 7rem;
+}
+@media screen and (min-width: 500px) {
+  .version {
+    padding-top: 6rem;
+  }
+}
+.version p {
+  text-align: center;
+  color: #ffffff;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 500px) {
+  .version p {
+    max-width: unset;
+  }
+}
+.version p a {
+  font-weight: bold;
+  color: #0098ff;
+}
+.version p a:hover {
+  text-decoration: underline;
+}
+
+.banner {
+  background: #2c2c32;
+}
+@media screen and (min-width: 500px) {
+  .banner__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1rem;
+  }
+}
+.banner__text {
+  color: #ffffff;
+}
+.banner__text h1 {
+  text-align: center;
+  font-size: clamp(4rem, 6vw, 5rem);
+  font-weight: normal;
+}
+.banner__text h1 span {
+  font-weight: bold;
+}
+.banner__text p {
+  margin: 2rem 0;
+  color: rgba(255, 255, 255, 0.5333333333);
+  text-align: center;
+}
+.banner__text p a {
+  color: #0098ff;
+}
+.banner__text p a:hover {
+  text-decoration: underline;
+}
+@media screen and (min-width: 500px) {
+  .banner__text {
+    place-self: center;
+  }
+}
+.banner__btns {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+}
+.banner__btns a {
+  color: #ffffff;
+  text-align: center;
+}
+.banner__btns a span {
+  font-size: 1.4rem;
+}
+.banner__btns a:hover {
+  background: #005294;
+}
+.banner__btns button {
+  border: unset;
+  outline: unset;
+  cursor: pointer;
+}
+.banner__btns button:hover {
+  background: #005294;
+}
+.banner__btns button i {
+  color: #ffffff;
+}
+.banner .platforms {
+  display: flex;
+  justify-content: center;
+}
+.banner .platforms p {
+  position: relative;
+  display: inline-block;
+  background: #25252b;
+  border-radius: 7rem;
+  font-size: 1.5rem;
+  opacity: 1;
+  background: #25252b;
+  padding: 1rem 2rem;
+}
+.banner .platforms p a {
+  color: #0098ff;
+}
+.banner .platforms p::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #25252b;
+  top: -1.5rem;
+  right: 2rem;
+}
+.banner__img img {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */

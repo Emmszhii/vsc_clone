@@ -1,0 +1,117 @@
+.version {
+  background: $clr-dark-primary;
+  padding-top: 7rem;
+  @include mediaQuery($break-sm) {
+    padding-top: 6rem;
+  }
+  p {
+    text-align: center;
+    color: $clr-light-primary;
+    max-width: 40rem;
+    margin: 0 auto;
+    @include mediaQuery($break-sm) {
+      max-width: unset;
+    }
+    a {
+      font-weight: bold;
+      color: $clr-primary-light;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.banner {
+  background: $clr-dark-secondary;
+
+  &__wrapper {
+    @include mediaQuery($break-sm) {
+      @include gridUneven(1fr 2fr, 1rem);
+    }
+  }
+  &__text {
+    color: $clr-light-primary;
+    h1 {
+      text-align: center;
+      font-size: clamp(4rem, 6vw, 5rem);
+      font-weight: normal;
+      span {
+        font-weight: bold;
+      }
+    }
+    p {
+      margin: 2rem 0;
+      color: #ffffff88;
+      text-align: center;
+      a {
+        color: $clr-primary-light;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    @include mediaQuery($break-sm) {
+      place-self: center;
+    }
+  }
+  &__btns {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    a {
+      color: $clr-light-primary;
+      text-align: center;
+      span {
+        font-size: 1.4rem;
+      }
+      &:hover {
+        background: darken($clr-primary, 7);
+      }
+    }
+    button {
+      border: unset;
+      outline: unset;
+      cursor: pointer;
+      &:hover {
+        background: darken($clr-primary, 7);
+      }
+    }
+    button i {
+      color: $clr-light-primary;
+    }
+  }
+  .platforms {
+    display: flex;
+    justify-content: center;
+    p {
+      position: relative;
+      display: inline-block;
+      background: $clr-dark-primary;
+      border-radius: 7rem;
+      font-size: 1.5rem;
+      opacity: 1;
+      background: $clr-dark-primary;
+      padding: 1rem 2rem;
+      a {
+        color: $clr-primary-light;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid $clr-dark-primary;
+        top: -1.5rem;
+        right: 2rem;
+      }
+    }
+  }
+  &__img {
+    img {
+      width: 100%;
+    }
+  }
+}
