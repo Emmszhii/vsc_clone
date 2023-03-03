@@ -2,7 +2,6 @@
   width: 100%;
   position: fixed;
   background: $clr-dark-secondary;
-  z-index: 99;
   &__wrapper {
     @include grid(2, 1rem);
     @include mediaQuery($break-sm) {
@@ -34,9 +33,9 @@
     height: 42vh;
     padding-top: 6rem;
     transition: 0.5s ease;
-    z-index: -1;
     background: $clr-dark-primary;
     overflow-y: auto;
+    z-index: -1;
     @include mediaQuery($break-sm) {
       overflow-y: unset;
     }
@@ -104,7 +103,7 @@
           padding: 1rem 1.5rem;
           padding-left: 4rem;
           @include mediaQuery($break-sm) {
-            padding: 1.5rem 3rem;
+            padding: 1.53rem 3rem;
           }
         }
         @include mediaQuery($break-sm) {

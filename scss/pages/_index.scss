@@ -24,7 +24,6 @@
 
 .banner {
   background: $clr-dark-secondary;
-
   &__wrapper {
     @include mediaQuery($break-sm) {
       @include gridUneven(1fr 2fr, 1rem);

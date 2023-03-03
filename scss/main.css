@@ -376,7 +376,6 @@ body {
   width: 100%;
   position: fixed;
   background: #2c2c32;
-  z-index: 99;
 }
 .header__wrapper {
   display: grid;
@@ -419,9 +418,9 @@ body {
   height: 42vh;
   padding-top: 6rem;
   transition: 0.5s ease;
-  z-index: -1;
   background: #25252b;
   overflow-y: auto;
+  z-index: -1;
 }
 @media screen and (min-width: 500px) {
   .header__nav {
@@ -502,7 +501,7 @@ body {
 }
 @media screen and (min-width: 500px) {
   .header__nav .header__right a:last-child {
-    padding: 1.5rem 3rem;
+    padding: 1.53rem 3rem;
   }
 }
 @media screen and (min-width: 500px) {
