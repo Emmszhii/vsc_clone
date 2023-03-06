@@ -7,7 +7,7 @@
   p {
     text-align: center;
     color: $clr-light-primary;
-    // max-width: 40rem;
+
     margin: 0 auto;
     @include mediaQuery($break-lg) {
       max-width: unset;
@@ -117,6 +117,9 @@
 }
 
 .props {
+  .container {
+    padding: 0 1.5rem;
+  }
   &__wrapper {
     @include grid(2, 1rem);
     @include mediaQuery($break-lg) {
@@ -124,7 +127,7 @@
     }
   }
   &__value {
-    padding: 1rem;
+    padding: 1.5rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,7 +144,25 @@
     &:hover {
       background-color: darken($clr-light-primary, 9);
       i {
-        color: $clr-primary;
+        color: indigo;
+      }
+    }
+    &:nth-child(2):hover {
+      background-color: darken($clr-light-primary, 9);
+      i {
+        color: green;
+      }
+    }
+    &:nth-child(3):hover {
+      background-color: darken($clr-light-primary, 9);
+      i {
+        color: red;
+      }
+    }
+    &:nth-child(4):hover {
+      background-color: darken($clr-light-primary, 9);
+      i {
+        color: black;
       }
     }
   }
