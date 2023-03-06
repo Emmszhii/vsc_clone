@@ -3,8 +3,8 @@
   position: fixed;
   background: $clr-dark-secondary;
   &__wrapper {
-    @include grid(2, 1rem);
-    @include mediaQuery($break-sm) {
+    @include gridUneven(2fr 1fr, 1rem);
+    @include mediaQuery($break-lg) {
       display: flex;
       width: 100%;
     }
@@ -20,7 +20,7 @@
   h2 {
     font-size: 2rem;
     color: $clr-light-primary;
-    @include mediaQuery($break-sm) {
+    @include mediaQuery($break-lg) {
       width: 18rem;
     }
   }
@@ -30,13 +30,11 @@
     top: -100rem;
     left: 0;
     width: 100%;
-    height: 42vh;
-    padding-top: 7rem;
+    max-height: 34.5rem;
     transition: 0.5s ease;
     background: $clr-dark-primary;
-    overflow-y: auto;
     z-index: -2;
-    @include mediaQuery($break-sm) {
+    @include mediaQuery($break-lg) {
       overflow-y: unset;
     }
     ul {
@@ -50,7 +48,7 @@
         &:hover a {
           color: $clr-light-primary;
         }
-        @include mediaQuery($break-sm) {
+        @include mediaQuery($break-lg) {
           padding: unset;
           & a {
             opacity: 0.5;
@@ -60,7 +58,7 @@
           }
         }
       }
-      @include mediaQuery($break-sm) {
+      @include mediaQuery($break-lg) {
         align-items: end;
         gap: 2rem;
       }
@@ -75,7 +73,7 @@
       }
       i.fa-magnifying-glass {
         display: none;
-        @include mediaQuery($break-sm) {
+        @include mediaQuery($break-lg) {
           display: block;
           position: absolute;
           z-index: 1;
@@ -88,7 +86,7 @@
         left: 1.8rem;
         top: 5.1rem;
         z-index: 1;
-        @include mediaQuery($break-sm) {
+        @include mediaQuery($break-lg) {
           left: unset;
           right: 11rem;
           top: 5px;
@@ -102,11 +100,11 @@
         &:last-child {
           padding: 1rem 1.5rem;
           padding-left: 4rem;
-          @include mediaQuery($break-sm) {
+          @include mediaQuery($break-lg) {
             padding: 1.53rem 3rem;
           }
         }
-        @include mediaQuery($break-sm) {
+        @include mediaQuery($break-lg) {
           & {
             position: absolute;
             padding: 1.45rem;
@@ -134,7 +132,7 @@
         color: $clr-light-primary;
         border: none;
         outline: none;
-        @include mediaQuery($break-sm) {
+        @include mediaQuery($break-lg) {
           display: block;
           position: absolute;
           padding: 2rem;
@@ -149,9 +147,10 @@
       }
     }
     &.active {
-      top: 0;
+      top: 7rem;
+      overflow-y: scroll;
     }
-    @include mediaQuery($break-sm) {
+    @include mediaQuery($break-lg) {
       & {
         z-index: unset;
         position: unset;
@@ -170,13 +169,18 @@
   }
 
   &__bars {
+    place-self: end;
     i {
-      padding: 0.5rem;
+      border-radius: 2px;
+      padding: 0.5rem 1rem;
       color: $clr-light-primary;
       font-size: 3rem;
-      float: right;
+      cursor: pointer;
     }
-    @include mediaQuery($break-sm) {
+    &:hover i {
+      background-color: $clr-primary;
+    }
+    @include mediaQuery($break-lg) {
       & {
         display: none;
       }

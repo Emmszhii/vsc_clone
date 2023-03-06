@@ -1,15 +1,15 @@
 .version {
   background: $clr-dark-primary;
   padding-top: 7rem;
-  @include mediaQuery($break-sm) {
+  @include mediaQuery($break-lg) {
     padding-top: 6rem;
   }
   p {
     text-align: center;
     color: $clr-light-primary;
-    max-width: 40rem;
+    // max-width: 40rem;
     margin: 0 auto;
-    @include mediaQuery($break-sm) {
+    @include mediaQuery($break-lg) {
       max-width: unset;
     }
     a {
@@ -25,7 +25,8 @@
 .banner {
   background: $clr-dark-secondary;
   &__wrapper {
-    @include mediaQuery($break-sm) {
+    @include grid(1, 1rem);
+    @include mediaQuery($break-lg) {
       @include gridUneven(1fr 2fr, 1rem);
     }
   }
@@ -33,7 +34,7 @@
     color: $clr-light-primary;
     h1 {
       text-align: center;
-      font-size: clamp(4rem, 6vw, 5rem);
+      font-size: clamp(5rem, 6vw, 6rem);
       font-weight: normal;
       span {
         font-weight: bold;
@@ -50,7 +51,7 @@
         }
       }
     }
-    @include mediaQuery($break-sm) {
+    @include mediaQuery($break-lg) {
       place-self: center;
     }
   }
@@ -111,6 +112,37 @@
   &__img {
     img {
       width: 100%;
+    }
+  }
+}
+
+.props {
+  &__wrapper {
+    @include grid(2, 1rem);
+    @include mediaQuery($break-lg) {
+      @include grid(4, 1rem);
+    }
+  }
+  &__value {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    i {
+      place-self: center;
+      font-size: 5rem;
+    }
+    p {
+      padding-top: 1rem;
+      font-size: 2rem;
+    }
+    &:hover {
+      background-color: darken($clr-light-primary, 9);
+      i {
+        color: $clr-primary;
+      }
     }
   }
 }
