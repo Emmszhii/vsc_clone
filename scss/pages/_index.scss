@@ -121,9 +121,9 @@
     padding: 0 1.5rem;
   }
   &__wrapper {
-    @include grid(2, 1rem);
+    @include grid(2, 0rem);
     @include mediaQuery($break-lg) {
-      @include grid(4, 1rem);
+      @include grid(4, 0rem);
     }
   }
   &__value {
@@ -134,8 +134,8 @@
     width: 100%;
     cursor: pointer;
     i {
-      place-self: center;
       font-size: 5rem;
+      color: $clr-dark-primary;
     }
     p {
       padding-top: 1rem;
@@ -143,26 +143,159 @@
     }
     &:hover {
       background-color: darken($clr-light-primary, 9);
-      i {
-        color: indigo;
+    }
+    &:nth-child(1):hover i {
+      color: indigo;
+    }
+    &:nth-child(2):hover i {
+      color: green;
+    }
+    &:nth-child(3):hover i {
+      color: red;
+    }
+    &:nth-child(4):hover i {
+      color: black;
+    }
+  }
+}
+
+.socials {
+  padding: 3rem 0;
+  background: $clr-light-secondary;
+  &__flex {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    gap: 1rem;
+  }
+  .tns-outer {
+    position: relative;
+  }
+  .tns-inner {
+    padding: 0 2rem;
+  }
+  .tns-controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    z-index: 99;
+    button {
+      border: unset;
+      font-size: 2rem;
+    }
+  }
+  &__users {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  &__user {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    img {
+      @include imgFit(7rem, 7rem);
+      border-radius: 50%;
+    }
+    &__head {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.about {
+  max-width: 100%;
+  overflow: hidden;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    background: $clr-light-primary;
+    position: relative;
+    @include mediaQuery($break-lg) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+    h3 {
+      font-size: 2.3rem;
+      opacity: 0.6;
+      font-weight: normal;
+      padding: 2rem 0 3rem 0;
+      &:nth-child(4) {
+        padding-top: 2rem;
+      }
+      @include mediaQuery($break-lg) {
+        opacity: 1;
+        font-size: 3rem;
+        &:nth-child(4) {
+          padding-top: 4rem;
+        }
       }
     }
-    &:nth-child(2):hover {
-      background-color: darken($clr-light-primary, 9);
-      i {
-        color: green;
+    p {
+      line-height: 4rem;
+      font-size: 1.8rem;
+      opacity: 0.8;
+      a {
+        color: $clr-primary;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      @include mediaQuery($break-lg) {
+        opacity: 1;
+        font-size: 2rem;
       }
     }
-    &:nth-child(3):hover {
-      background-color: darken($clr-light-primary, 9);
-      i {
-        color: red;
+    img {
+      @include imgFit(60%, 60%);
+      @include mediaQuery($break-lg) {
+        @include imgFit(30%, 20%);
+        transition: 0.5s ease;
       }
     }
-    &:nth-child(4):hover {
-      background-color: darken($clr-light-primary, 9);
-      i {
-        color: black;
+    #extensions {
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    &__text {
+      @include mediaQuery($break-lg) {
+        max-width: 60%;
+      }
+    }
+    &:nth-child(2),
+    &:nth-child(4) {
+      background: $clr-light-secondary;
+      @include mediaQuery($break-lg) {
+        flex-direction: row-reverse;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        background: $clr-light-secondary;
+        left: 0;
+        top: 0;
+        z-index: -2;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        background: $clr-light-secondary;
+        z-index: -1;
+        top: 0;
+        right: 0;
       }
     }
   }

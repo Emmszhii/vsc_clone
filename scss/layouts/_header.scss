@@ -2,6 +2,8 @@
   width: 100%;
   position: fixed;
   background: $clr-dark-secondary;
+  box-shadow: 1px 1px 1px 1px black;
+  z-index: 999;
   &__wrapper {
     @include gridUneven(2fr 1fr, 1rem);
     @include mediaQuery($break-lg) {
@@ -13,6 +15,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    z-index: 999;
   }
   img {
     @include imgFit(2.5rem, 2.5rem);
@@ -24,7 +27,16 @@
       width: 18rem;
     }
   }
-
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: $clr-dark-secondary;
+    top: 0;
+    left: 0;
+  }
   &__nav {
     position: absolute;
     top: -100rem;
@@ -33,7 +45,8 @@
     max-height: 35rem;
     transition: 0.5s ease;
     background: $clr-dark-primary;
-    z-index: -2;
+    z-index: 98;
+
     @include mediaQuery($break-lg) {
       overflow-y: unset;
     }
@@ -152,11 +165,11 @@
     }
     @include mediaQuery($break-lg) {
       & {
-        z-index: unset;
-        position: unset;
-        height: unset;
-        padding-top: unset;
-        padding-left: unset;
+        position: relative;
+        z-index: 99;
+        // height: unset;
+        // padding-top: unset;
+        // padding-left: unset;
         background: unset;
         top: 0;
         display: flex;
@@ -170,6 +183,7 @@
 
   &__bars {
     place-self: end;
+    z-index: 99;
     i {
       border-radius: 2px;
       padding: 0.5rem 1rem;
@@ -190,13 +204,5 @@
     .container {
       padding: 1.5rem 0;
     }
-  }
-  &::before {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: $clr-dark-secondary;
   }
 }
