@@ -1092,10 +1092,48 @@ body {
   padding: 0.2rem 0;
 }
 .downloads__links table tr td a {
-  border-radius: 3px;
-  padding: 0.5rem;
+  border-radius: 2px;
+  padding: 3px;
   font-size: 1.2rem;
 }
 .downloads__links table tr td:first-child {
   font-size: 1.8rem;
+}
+
+.terms {
+  background: #f5f5f5;
+}
+.terms__header {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 0;
+}
+.terms__item {
+  text-align: center;
+  padding: 4rem;
+}
+.terms__item h3 {
+  padding: 1rem 0 0 0;
+  color: #3d3d46;
+}
+.terms__item h3 a {
+  color: #0066b8;
+}
+.terms__item h3 a:hover {
+  color: #004a85;
+  text-decoration: underline;
+}
+.terms__item p {
+  padding: 1rem 0;
+}
+.terms__item p a {
+  color: #0066b8;
+}
+.terms__item p a:hover {
+  color: #004a85;
+  text-decoration: underline;
+}
+.terms__footer h4 {
+  text-align: center;
+  color: #3d3d46;
 }/*# sourceMappingURL=main.css.map */

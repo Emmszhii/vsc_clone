@@ -435,8 +435,8 @@
           text-align: center;
           padding: 0.2rem 0;
           a {
-            border-radius: 3px;
-            padding: 0.5rem;
+            border-radius: 2px;
+            padding: 3px;
             font-size: 1.2rem;
           }
           &:first-child {
@@ -444,6 +444,44 @@
           }
         }
       }
+    }
+  }
+}
+
+.terms {
+  background: $clr-light-secondary;
+  &__header {
+    @include grid(1, 0);
+  }
+  &__item {
+    text-align: center;
+    padding: 4rem;
+    h3 {
+      padding: 1rem 0 0 0;
+      color: lighten($clr-dark-primary, 10%);
+      a {
+        color: $clr-primary;
+        &:hover {
+          color: darken($clr-primary, 10%);
+          text-decoration: underline;
+        }
+      }
+    }
+    p {
+      padding: 1rem 0;
+      a {
+        color: $clr-primary;
+        &:hover {
+          color: darken($clr-primary, 10%);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &__footer {
+    h4 {
+      text-align: center;
+      color: lighten($clr-dark-primary, 10%);
     }
   }
 }
