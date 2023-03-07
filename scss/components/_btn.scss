@@ -4,5 +4,9 @@
 }
 
 .btn--primary {
+  color: $clr-light-primary;
   background: $clr-primary;
+  &:hover {
+    background: darken($clr-primary, 9);
+  }
 }
