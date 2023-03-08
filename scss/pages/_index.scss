@@ -387,14 +387,40 @@
 .downloads {
   padding: 5rem 0;
   &__wrapper {
-    @include grid(1, 1rem);
+    // @include grid(1, 1rem);
+
+    @include mediaQuery($break-med) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
     @include mediaQuery($break-lg) {
-      @include grid(3, 0);
+      justify-content: center;
+      gap: 1rem;
+      // @include grid(3, 0);
       max-width: 75%;
       margin: 0 auto;
     }
   }
+  &__item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    // padding: 1rem 0;
+    padding: 1rem 2rem;
+    img {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
   &__buttons {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    justify-content: center;
     a {
       padding: 0.8rem 3rem;
       font-size: 1.8rem;
@@ -406,24 +432,13 @@
       }
     }
   }
-  &__item {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    padding: 1rem 0;
-    img {
-      width: 20%;
-      height: 25%;
-      // @include imgFit(20%, 25%);
-    }
+
+  &__item:nth-child(2) &__buttons a {
+    width: 16rem;
   }
   &__item:first-child &__buttons,
   &__item:nth-child(3) &__buttons {
-    width: 40%;
-    @include mediaQuery($break-lg) {
-      width: 70%;
-    }
+    width: 23rem;
     a {
       width: 100%;
     }
@@ -452,23 +467,30 @@
   background: $clr-light-secondary;
   &__header {
     @include grid(1, 0);
+    @include mediaQuery($break-lg) {
+      @include grid(2, 0);
+    }
   }
   &__item {
     text-align: center;
     padding: 4rem;
     h3 {
       padding: 1rem 0 0 0;
-      color: lighten($clr-dark-primary, 10%);
+      color: lighten($clr-dark-primary, 20%);
+      @include mediaQuery($break-lg) {
+        font-size: 2.3rem;
+      }
       a {
         color: $clr-primary;
         &:hover {
-          color: darken($clr-primary, 10%);
+          color: darken($clr-primary, 20%);
           text-decoration: underline;
         }
       }
     }
     p {
       padding: 1rem 0;
+      color: lighten($clr-dark-primary, 20%);
       a {
         color: $clr-primary;
         &:hover {
@@ -481,7 +503,27 @@
   &__footer {
     h4 {
       text-align: center;
-      color: lighten($clr-dark-primary, 10%);
+      color: lighten($clr-dark-primary, 20%);
+    }
+    p {
+      color: darken($clr-primary, 20%);
+      margin: 0 auto;
+      text-align: center;
+      max-width: 25rem;
+      line-height: 2.5;
+      font-size: 1.3rem;
+      padding-bottom: 4rem;
+      @include mediaQuery($break-lg) {
+        font-size: 1.5rem;
+        max-width: 80rem;
+      }
+      a {
+        color: $clr-primary;
+        &:hover {
+          color: darken($clr-primary, 10%);
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

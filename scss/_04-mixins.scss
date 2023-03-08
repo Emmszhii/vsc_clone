@@ -24,6 +24,12 @@
   }
 }
 
+@mixin mediaQueryMax($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
 @mixin scrollbar($color: $color-primary) {
   &::-webkit-scrollbar {
     width: 1rem;

@@ -10,3 +10,12 @@
     background: darken($clr-primary, 9);
   }
 }
+
+.btn--light {
+  color: $clr-dark-primary;
+  background: $clr-light-primary;
+
+  &:hover {
+    background: darken($clr-light-primary, 9);
+  }
+}
