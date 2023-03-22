@@ -19,9 +19,5 @@ let slider = tns({
   slideBy: "page",
   autoPlay: false,
   axis: "horizontal",
-  responsive: {
-    1020: {
-      items: 3,
-    },
-  },
+  responsive: {},
 });

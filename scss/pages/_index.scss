@@ -182,8 +182,17 @@
     top: 50%;
     z-index: 99;
     button {
+      background: transparent;
       border: unset;
-      font-size: 2rem;
+      font-size: 3rem;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+  .tns-horizontal.tns-subpixel > .tns-item {
+    @include mediaQuery($break-lg) {
+      display: inline-flex;
     }
   }
   &__users {
@@ -194,7 +203,11 @@
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-
+    @include mediaQuery($break-lg) {
+      & {
+        justify-content: center;
+      }
+    }
     img {
       @include imgFit(7rem, 7rem);
       border-radius: 50%;

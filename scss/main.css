@@ -904,8 +904,17 @@ body {
   z-index: 99;
 }
 .socials .tns-controls button {
+  background: transparent;
   border: unset;
-  font-size: 2rem;
+  font-size: 3rem;
+}
+.socials .tns-controls button:hover {
+  opacity: 0.5;
+}
+@media screen and (min-width: 970px) {
+  .socials .tns-horizontal.tns-subpixel > .tns-item {
+    display: inline-flex;
+  }
 }
 .socials__users {
   max-width: 80%;
@@ -915,6 +924,11 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+}
+@media screen and (min-width: 970px) {
+  .socials__user {
+    justify-content: center;
+  }
 }
 .socials__user img {
   width: 7rem;
